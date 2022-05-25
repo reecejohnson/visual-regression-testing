@@ -44,7 +44,7 @@ export const Header = ({
             />
           </g>
         </svg>
-        <h1>Acme</h1>
+        <h1>Acme New</h1>
       </div>
       <div>
         {user ? (
