@@ -4,22 +4,16 @@ import { Button } from "../Button/Button";
 import "./header.css";
 
 type User = {
-  name: string;
+  address: string;
 };
 
 interface HeaderProps {
   user?: User;
   onLogin: () => void;
   onLogout: () => void;
-  onCreateAccount: () => void;
 }
 
-export const Header = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}: HeaderProps) => (
+export const Header = ({ user, onLogin, onLogout }: HeaderProps) => (
   <header>
     <div className="wrapper">
       <div>
@@ -44,25 +38,16 @@ export const Header = ({
             />
           </g>
         </svg>
-        <h1>Acme New</h1>
+        <h1>Visual Regression Testing</h1>
       </div>
       <div>
         {user ? (
           <>
-            <span className="welcome">
-              Welcome, <b>{user.name}</b>!
-            </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
+            <Button size="large" onClick={onLogout} label={user.address} />
           </>
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button
-              primary
-              size="small"
-              onClick={onCreateAccount}
-              label="Sign up"
-            />
+            <Button size="small" onClick={onLogin} label="Connect Wallet" />
           </>
         )}
       </div>
