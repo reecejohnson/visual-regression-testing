@@ -11,15 +11,9 @@ interface HeaderProps {
   user?: User;
   onLogin: () => void;
   onLogout: () => void;
-  onCreateAccount: () => void;
 }
 
-export const Header = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}: HeaderProps) => (
+export const Header = ({ user, onLogin, onLogout }: HeaderProps) => (
   <header>
     <div className="wrapper">
       <div>
@@ -44,7 +38,7 @@ export const Header = ({
             />
           </g>
         </svg>
-        <h1>Acme New</h1>
+        <h1>Visual Regression Testing</h1>
       </div>
       <div>
         {user ? (
@@ -54,12 +48,6 @@ export const Header = ({
         ) : (
           <>
             <Button size="small" onClick={onLogin} label="Connect Wallet" />
-            <Button
-              primary
-              size="small"
-              onClick={onCreateAccount}
-              label="Sign up"
-            />
           </>
         )}
       </div>
