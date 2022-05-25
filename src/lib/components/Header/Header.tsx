@@ -4,7 +4,7 @@ import { Button } from "../Button/Button";
 import "./header.css";
 
 type User = {
-  name: string;
+  address: string;
 };
 
 interface HeaderProps {
@@ -49,14 +49,11 @@ export const Header = ({
       <div>
         {user ? (
           <>
-            <span className="welcome">
-              Welcome, <b>{user.name}</b>!
-            </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
+            <Button size="large" onClick={onLogout} label={user.address} />
           </>
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
+            <Button size="small" onClick={onLogin} label="Connect Wallet" />
             <Button
               primary
               size="small"
